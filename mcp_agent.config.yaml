@@ -1,0 +1,24 @@
+execution_engine: asyncio
+logger:
+  transports: [console]
+  level: info
+
+mcp:
+  servers:
+    todo:
+      command: "python"
+      args: ["servers/todo_server.py"]
+      description: "Gestión de tareas"
+    version_control:
+      command: "python"
+      args: [
+        "servers/version_control.py",
+        "--allowed-paths",
+        "/home/lsempere/proyectos/mcp/chat_agent",
+      ]
+      description: "Control de versiones Git"
+      
+google:
+  default_model: "gemini-2.0-flash"
+  temperature: 0.7
+  vertexai: false
